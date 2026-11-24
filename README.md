@@ -182,10 +182,6 @@ Coverage by season, read live from the database: https://strikerapi.com/docs?utm
 - [Docs](https://strikerapi.com/docs?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp): every tool, parameter and response, with coverage by season
 - [Data](https://strikerapi.com/data?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp): shot data, match events, historical odds and goalscorer prices
 - [Pricing](https://strikerapi.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp): free tier and plans
-- [vs API-Football](https://strikerapi.com/compare/api-football-alternative?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp)
-- [vs football-data.org](https://strikerapi.com/compare/football-data-org-alternative?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp)
-- [vs Sportmonks](https://strikerapi.com/compare/sportmonks-alternative?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp)
-- [vs scraping FBref](https://strikerapi.com/compare/fbref-scraping?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp)
 
 ## Pricing
 
