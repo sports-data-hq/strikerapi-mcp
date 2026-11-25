@@ -35,22 +35,14 @@ It forwards to the hosted server with your key, so every tool and credit cost is
 
 ## Skills
 
-The [`skills/`](skills/) folder holds 16 Claude skills that turn Claude into a soccer analyst on top of these tools: match lookup, team and player analysis, odds comparison, xG and shot maps, Elo, Poisson and Dixon-Coles score models, three-way devigging, calibration, edge detection, backtesting and anytime goalscorer modeling. Each skill names the exact tools it calls and what they cost.
-
-```bash
-git clone https://github.com/noahowsh/strikerapi-mcp.git
-```
-
-Or install them as a Claude Code plugin:
+Claude skills for soccer now live in the SportsDataHQ skills marketplace, one plugin per sport, alongside skills for eight more sports: [sports-data-hq/sportsdatahq-skills](https://github.com/sports-data-hq/sportsdatahq-skills).
 
 ```
-/plugin marketplace add noahowsh/strikerapi-mcp
-/plugin install strikerapi-skills@strikerapi
+/plugin marketplace add sports-data-hq/sportsdatahq-skills
+/plugin install soccer-data@sportsdatahq
 ```
 
-Or with the skills CLI: `npx skills add noahowsh/strikerapi-mcp`.
-
-Then point Claude at the `skills/` folder (for Claude Code, copy or symlink the folders into `~/.claude/skills/`) and connect the server below. Start with `dispatch` if you are unsure which skill to use. Full catalog: [`skills/README.md`](skills/README.md).
+The plugin connects the StrikerAPI MCP server; every number comes from a live call.
 
 ## Python
 
@@ -197,19 +189,13 @@ MIT for the contents of this repository. Data terms as above.
 
 ## Use with Codex
 
-Add this repo as a Codex plugin marketplace, then install the plugin:
+The SportsDataHQ skills marketplace also works in Codex (it reads `.agents/plugins/marketplace.json`):
 
 ```bash
-codex plugin marketplace add noahowsh/strikerapi-mcp
+codex plugin marketplace add sports-data-hq/sportsdatahq-skills
 ```
 
-Then open the plugin directory in Codex and install `strikerapi-skills` from the `strikerapi` marketplace. The plugin bundles the skills in `skills/` and the StrikerAPI MCP server (https://mcp.strikerapi.com/mcp). Set your key first (free at https://strikerapi.com/signup?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp):
-
-```bash
-export STRIKERAPI_API_KEY=your_key
-```
-
-Codex sends it as a bearer token.
+Install `soccer-data`, which bundles the soccer skills and the StrikerAPI MCP server.
 
 ## Use with Gemini CLI
 
