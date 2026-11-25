@@ -1,0 +1,54 @@
+{
+  "skill": "soccer-set-pieces",
+  "tasks": [
+    {
+      "prompt": "How many goals has Arsenal scored from set pieces in their last 8 matches?",
+      "expect": [
+        "get_events called with kind set_pieces for each match, matches read stated",
+        "set-piece counts for and against with samples",
+        "no claim beyond what rows return"
+      ]
+    },
+    {
+      "prompt": "Who takes Real Madrid's corners and free kicks?",
+      "expect": [
+        "tag check on one match first",
+        "taker grouping only if a taker field is returned",
+        "small counts flagged"
+      ]
+    },
+    {
+      "prompt": "Set-piece record for a lower-league Brazilian side",
+      "expect": [
+        "says events not held if the call returns nothing, instead of reporting zero",
+        "stops without estimating"
+      ]
+    }
+  ],
+  "triggers": {
+    "should": [
+      "how many goals do Arsenal score from corners",
+      "who takes the set pieces for Chelsea",
+      "are they good at defending corners",
+      "penalty record this season for Inter",
+      "free kick goals this year in La Liga",
+      "set piece dependence of Burnley",
+      "corners won and conceded for Brighton",
+      "how many penalties did Tottenham concede",
+      "are Villa dangerous from dead balls",
+      "goals from set pieces in the Bundesliga"
+    ],
+    "should_not": [
+      "preview Arsenal vs Chelsea",
+      "xG by shot zone for Haaland",
+      "what is Brighton's playing style",
+      "simulate the Premier League table",
+      "anytime goalscorer prices tonight",
+      "fantasy points projection for Salah",
+      "Elo ratings of La Liga clubs",
+      "head to head Spurs vs Arsenal",
+      "build an xG model",
+      "corner kicks in American football"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "skill": "soccer-team-style-profile",
+  "tasks": [
+    {
+      "prompt": "What is Brighton's style this season?",
+      "expect": [
+        "get_team_stats called",
+        "possession, shots and xG per shot vs league with formulas",
+        "no pressing claims without data"
+      ]
+    },
+    {
+      "prompt": "Compare Liverpool and City",
+      "expect": [
+        "both clubs on the same season and league",
+        "derived numbers shown with formulas",
+        "matches counted"
+      ]
+    },
+    {
+      "prompt": "Does Ajax press high?",
+      "expect": [
+        "states pressing intensity is not returned",
+        "offers what the data does show",
+        "no invented pressing metric"
+      ]
+    }
+  ],
+  "triggers": {
+    "should": [
+      "what is Brighton's style",
+      "how does Arsenal build up",
+      "do they press high",
+      "who counter-attacks",
+      "compare Liverpool and City styles",
+      "does this team take shots from distance",
+      "is it a possession team",
+      "how many shots do they concede",
+      "what formation do they play",
+      "does Newcastle create quality chances"
+    ],
+    "should_not": [
+      "xG breakdown of Arsenal vs Chelsea",
+      "preview Saturday's match",
+      "simulate the Premier League",
+      "anytime goalscorer prices",
+      "Premier League table",
+      "tennis serve style",
+      "NFL offensive tendencies",
+      "build a clustering model of team styles",
+      "Haaland over-performing xG",
+      "who won the league last year"
+    ]
+  }
+}

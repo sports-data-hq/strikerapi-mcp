@@ -1,0 +1,55 @@
+{
+  "skill": "soccer-season-simulation",
+  "tasks": [
+    {
+      "prompt": "Simulate the rest of the Premier League season",
+      "expect": [
+        "get_standings, get_ratings and list_games called",
+        "method statement with Elo formula, draw share and home-advantage assumption",
+        "simulation count and finishing probabilities"
+      ]
+    },
+    {
+      "prompt": "What are Spurs' chances of finishing top four?",
+      "expect": [
+        "probability from the simulation, not the market",
+        "fixtures remaining counted",
+        "caveats on injuries and rotation"
+      ]
+    },
+    {
+      "prompt": "Simulate the Championship but you cannot list the remaining fixtures",
+      "expect": [
+        "says the fixtures are incomplete",
+        "simulates only what was listed or declines",
+        "no invented probabilities"
+      ]
+    }
+  ],
+  "triggers": {
+    "should": [
+      "who wins the league",
+      "chance of finishing top four",
+      "relegation odds",
+      "simulate the rest of the season",
+      "how likely is Arsenal to win the title",
+      "what are Spurs' chances of Europe",
+      "title race odds with 8 games left",
+      "will Leicester go down",
+      "run a Monte Carlo on the table",
+      "how many points do we need to stay up"
+    ],
+    "should_not": [
+      "preview Arsenal vs Chelsea",
+      "did City deserve to win",
+      "what is the style of Brighton",
+      "anytime goalscorer price tonight",
+      "show the Premier League table",
+      "NFL playoff odds",
+      "NHL playoff simulation",
+      "build an Elo model",
+      "how many goals will Haaland score",
+      "Champions League draw explained"
+    ]
+  }
+}

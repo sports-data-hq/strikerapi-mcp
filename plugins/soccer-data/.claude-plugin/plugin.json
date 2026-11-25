@@ -1,0 +1,23 @@
+{
+  "name": "soccer-data",
+  "displayName": "StrikerAPI: soccer skills",
+  "version": "2.0.0",
+  "description": "Soccer analysis skills on StrikerAPI: game previews, player and team research, and the community's standard metrics, with every number pulled live from the StrikerAPI MCP server.",
+  "author": {
+    "name": "SportsDataHQ",
+    "url": "https://sportsdatahq.com"
+  },
+  "homepage": "https://strikerapi.com/skills",
+  "repository": "https://github.com/sports-data-hq/sportsdatahq-skills",
+  "license": "MIT",
+  "keywords": [
+    "soccer",
+    "football",
+    "premier-league",
+    "xg",
+    "fpl",
+    "mls",
+    "sports-data",
+    "strikerapi"
+  ]
+}
