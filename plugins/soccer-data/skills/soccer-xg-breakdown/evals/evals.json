@@ -42,6 +42,14 @@
         "z or standard deviation stated",
         "not enough data wording under 30 shots or one season"
       ]
+    },
+    {
+      "prompt": "Who was missing for Arsenal in that Newcastle game, and did it show in the chances?",
+      "expect": [
+        "get_availability or get_lineups used",
+        "says absent means not in the squad, reason not in the data",
+        "no injury or suspension claim"
+      ]
     }
   ],
   "triggers": {

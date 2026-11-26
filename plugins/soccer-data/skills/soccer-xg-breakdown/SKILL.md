@@ -2,7 +2,7 @@
 name: soccer-xg-breakdown
 description: "Use when the user asks whether a soccer result, club or player matches the chances created, in fan or analyst wording: 'were Spurs unlucky', 'did they deserve the win', 'who had the better chances', 'xG race for the derby', 'is Salah overperforming', 'big chances missed', 'shots against Liverpool', 'xG story of last night'. Use this whenever results are compared with shot quality. Load it for short fragments and follow-ups too, even with no name given, instead of answering from memory or going straight to the raw tools. Shows shots with location, outcome and our xG, big chances, and finishing over or under expected with sample size. Not for pre-match previews (see soccer-match-preview), a club's style (see soccer-team-style-profile), title odds (see soccer-season-simulation), hockey expected goals (see nhl-xg-report) or building an xG model."
 metadata:
-  version: 2.1.0
+  version: 2.2.0
   author: SportsDataHQ
 ---
 
@@ -21,7 +21,8 @@ Expected goals tells you who made the better chances, not who won. This skill tu
 1. **Find the match.** `list_games(team, date)` or `list_games(from, to, team)` (2 cr) for the `game_id`. Use `status: final`; for a match not yet played, hand off to soccer-match-preview.
 2. **The match file.** `get_game(game_id)` (5 cr): score, both clubs' xG, shots, shots on target, blocked shots, possession, `penalty_goals` and `penalty_attempts`, key events.
 3. **Every shot.** `get_events(game_id, kind: "shots")` (10 cr): minute, shooter, assister, location, zone, body part, outcome, xG, penalty flag. Check `count` and `next_offset`; a match has about 20 to 35 shots.
-4. **Optional, state and sequence.** `get_events(game_id, kind: "cards")` (10 cr) when a red card changes the match.
+4. **Who was missing (optional).** `get_availability(team, matches: 10, league)` (5 cr per club) when the user asks who was out, or a surprising lineup or finishing gap needs context: each squad player's status and recent matchday squads. It reflects the latest squads, not the match date; for a past match use `get_lineups(game_id)` (5 cr) to see who actually started and played. The tool cannot separate injury, suspension and selection; say "absent from the squad" and never name a reason.
+5. **Optional, state and sequence.** `get_events(game_id, kind: "cards")` (10 cr) when a red card changes the match.
 
 ## A club or player over a season (about 10 to 20 credits)
 1. **Finishing and shot quality.** `get_shot_map(player or team, season, include_shots: false)` (10 cr): totals, zones with goals and xG, `xg_per_shot`, conversion. Add `against: true` with a team for shots conceded.
@@ -47,7 +48,8 @@ xG race: <who led when, key swings by minute, sequences flagged>
 Best chances: <minute, player, xG, outcome> x3 | big chances (xG 0.30+): <n scored of n> each side
 Game state: <minutes leading / level / trailing and what it did to shot volume>
 Verdict: <who created more and better, the xG gap against the +/- 1.4 spread, and what the result says about luck>
-Data: list_games, get_game, get_events | <league>, season <yyyy>
+Missing (if asked): <players absent from the squad, reason not in the data>
+Data: list_games, get_game, get_events, get_availability | <league>, season <yyyy>
 ```
 
 ## Output template (club or player season)
@@ -80,6 +82,7 @@ Season check on the same data: Erling Haaland, 2026 Premier League, 9 goals from
 If the match the user names has not been played, don't stop to ask. Do the most useful real version and say which in the first line: the club's last completed match with the same breakdown, or the club's season xG for and against from `get_team_stats` and a pointer to soccer-match-preview for the fixture. If the league is between seasons, use the last completed season and say so.
 
 ## Rules
+- Who was missing: report the squad status the tool gives, with last appearance; never say injured or suspended, because the data cannot tell.
 - Always say "our xG" and the location-only caveat once.
 - Separate penalties; report shot counts beside xG; quote the standard deviation or the sample next to any luck claim.
 - Every number names its tool (the Data line, plus inline where it could be doubted).

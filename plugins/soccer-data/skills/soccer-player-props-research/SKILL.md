@@ -1,8 +1,8 @@
 ---
 name: soccer-player-props-research
-description: "Use when the user asks about soccer player prop prices as information: 'Haaland anytime scorer odds', 'how often does Saka score when he's priced like this', 'Palmer shots on target line', 'who's most likely to score in Arsenal Chelsea according to the market', 'did the price move on Salah', 'is Isak worth looking at for first goalscorer'. Shows prices by sportsbook, the market's no-margin probability, the player's record against similar lines with minutes, and how the price moved. Covers anytime, first and last goalscorer, shots, shots on target, assists and cards where the league holds them. Never says which side to take. Not for match previews (see soccer-match-preview), expected goals stories (see soccer-xg-breakdown) or general odds math (see odds-market-analysis)."
+description: "Use when the user asks about soccer player prop prices as information: 'Haaland anytime scorer odds', 'how often does Saka score when he's priced like this', 'Palmer shots on target line', 'who's most likely to score in Arsenal Chelsea according to the market', 'did the price move on Salah', 'is Isak worth looking at for first goalscorer'. Shows prices by sportsbook, the market's no-margin probability, the player's record against similar lines with minutes, and how the price moved. Covers anytime, first and last goalscorer, shots, shots on target, assists and cards where the league holds them, and checks whether the player is in the squad before reading a price. Never says which side to take. Not for match previews (see soccer-match-preview), expected goals stories (see soccer-xg-breakdown) or general odds math (see odds-market-analysis)."
 metadata:
-  version: 2.1.0
+  version: 2.2.0
   author: SportsDataHQ
 ---
 
@@ -21,7 +21,7 @@ Prop prices are the market's view of one player's match. This skill lays them ou
 2. **Prices now.** `get_player_props(game_id, market)` (10 cr before kick-off, 20 after), or `player_id` with `from_date` for one player across matches. Markets: `player_goal_scorer_anytime`, `player_first_goal_scorer`, `player_last_goal_scorer`, `player_shots`, `player_shots_on_target`, `player_assists`, `player_to_receive_card`. Yes/no markets carry the Yes price in `over_odds`.
 3. **What the market implies.** `get_prop_probabilities(game_id, market, player_id)` (10 cr): average implied and no-margin probability. A market whose books post only the Yes price has no no-margin figure; say so and show the average implied one.
 4. **Track record.** `get_prop_history(player_id, market)` (10 cr per 25 matches covered): closing price and result per match; a null result means he wasn't in the squad or on the pitch (a void).
-5. **Will he start?** `get_lineups(game_id)` (5 cr) once lineups are out; before that, `get_player_games(player_id, season)` (5 cr) for starts and minutes. A sub appearance is a different bet on the same name.
+5. **Is he available, and will he start?** Before reading any price as live, `get_availability(team, league)` (5 cr; pass `player_id` for one player) for his club: status `in_squad`, `missed_last_squad` or `absent` (missing from the last two or more matchday squads), with recent squads, starts, minutes and days since his last appearance. If he is `absent`, say so first, because the price may be stale or the player not in the squad; if `missed_last_squad`, flag it as a minutes risk. The tool cannot tell injury from suspension or selection, so never name a reason. Then `get_lineups(game_id)` (5 cr) once lineups are out; before that, `get_player_games(player_id, season)` (5 cr) for starts and minutes. A sub appearance is a different bet on the same name.
 6. **Movement (optional).** `get_prop_movement` (10 cr).
 7. **The base rate (optional).** `get_prop_backtest(market, ...)` (25 cr) with filters such as `team_role`, `home_away`, `fair_min`/`fair_max`, `team` or `player_id`, for how often a kind of prop hit ("anytime scorer for home favourites"). Report its sample size, interval and per-season split, and never present a past rate as a pick.
 
@@ -37,8 +37,8 @@ Prop prices are the market's view of one player's match. This skill lays them ou
 Prices now: <book: price> | best and worst
 Market implies: <x%> (no-margin)
 Record: <hits>/<n> priced matches (<%>), <window> | starts only: <a>/<b> | goals per 90 <g> (np <npg>), <minutes> min
-Starting: <confirmed / probable / unknown>
-Data: search_players, get_player_props, get_prop_probabilities, get_prop_history, get_lineups | season <yyyy>
+Availability: <in_squad / missed_last_squad / absent, last appearance> | Starting: <confirmed / probable / unknown>
+Data: search_players, get_player_props, get_prop_probabilities, get_prop_history, get_availability, get_lineups | season <yyyy>
 ```
 
 ## When no line is posted
@@ -56,6 +56,7 @@ State each with its sample size; skip a split with fewer than 8 games and say wh
 ## Rules
 - Information only: no picks, leans, "value", stakes, payouts or sportsbook links.
 - Every number names its tool; every rate shows n.
+- A player marked `absent` is flagged before any price is shown; the data cannot say why he is missing.
 - No price posted yet: say so; don't borrow another market or match.
 - Sequences (last 5, recent form, a run of results) are quoted in the order the tool returns them, with dates; never retell them from memory. Lists in the answer must match the tool rows.
 - Out of credits: if a call is refused for credits, pass on the API's message as it comes (it says when free credits refill and how to add more), and stop; don't retry or switch tools to get around it.

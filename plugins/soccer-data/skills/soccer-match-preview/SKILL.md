@@ -2,7 +2,7 @@
 name: soccer-match-preview
 description: "Use when the user wants a preview of one soccer (football) match in any covered league: 'preview Arsenal vs Chelsea', 'break down the Clasico', 'what should I know about the Inter match', 'MLS preview LAFC vs Galaxy', 'Champions League preview'. Produces a one-page report: table position and form, our club Elo, xG for and against, lineups when out, the three-way line and what it implies. Not for one match's shot-by-shot xG story (see soccer-xg-breakdown) or modeling (see model-building)."
 metadata:
-  version: 2.1.0
+  version: 2.2.0
   author: SportsDataHQ
 ---
 
