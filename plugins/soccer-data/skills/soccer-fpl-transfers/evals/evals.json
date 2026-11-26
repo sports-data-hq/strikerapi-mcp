@@ -1,0 +1,56 @@
+{
+  "skill": "soccer-fpl-transfers",
+  "tasks": [
+    {
+      "prompt": "Who should I bring in for Haaland's rivals? My squad pasted, 1 free transfer, 1.5m in the bank",
+      "expect": [
+        "P60 from last 5 matches with n",
+        "xP formula stated",
+        "hit cost applied",
+        "prices from user only"
+      ]
+    },
+    {
+      "prompt": "Best defenders by fixtures over the next five gameweeks",
+      "expect": [
+        "games per club in window",
+        "clean-sheet probability from opponent expected goals",
+        "not claiming injuries"
+      ]
+    },
+    {
+      "prompt": "Should I sell Salah, he looks tired",
+      "expect": [
+        "P60 and recent minutes",
+        "next 4 fixtures xP vs replacement",
+        "tired claim not supported unless the log shows it"
+      ]
+    }
+  ],
+  "triggers": {
+    "should": [
+      "who should I bring in for my FPL team",
+      "should I take a four point hit",
+      "sell him or hold",
+      "best forwards for the next five gameweeks",
+      "fixture run for Arsenal defenders",
+      "who is nailed on for minutes in FPL",
+      "wildcard draft help",
+      "which defense has the best fixtures",
+      "free transfer or save it",
+      "replace my injured midfielder in fantasy premier league"
+    ],
+    "should_not": [
+      "who should I captain this week",
+      "preview Arsenal vs Chelsea",
+      "Haaland anytime goalscorer price",
+      "Premier League table",
+      "explain expected goals",
+      "MLS fantasy waiver",
+      "who wins the title",
+      "fantasy football waivers",
+      "Salah shots on target line",
+      "how did Liverpool play last week"
+    ]
+  }
+}

@@ -43,7 +43,7 @@ It forwards to the hosted server with your key, so every tool and credit cost is
 
 ## Skills
 
-6 Claude skills for soccer ship in this repo, plus 15 analytics skills for models, backtests, calibration and comparing a model with the market. Every number in an answer comes from a live StrikerAPI tool call, and odds are information only: no stakes, no picks.
+8 Claude skills for soccer ship in this repo, plus 15 analytics skills for models, backtests, calibration and comparing a model with the market. Every number in an answer comes from a live StrikerAPI tool call, and odds are information only: no stakes, no picks.
 
 Claude Code:
 
@@ -57,6 +57,8 @@ Codex: `codex plugin marketplace add sports-data-hq/strikerapi-mcp`. Any agent t
 
 | Skill | What it does |
 |---|---|
+| `soccer-fpl-captain` | FPL captain pick ranked by expected points, with the model's goal chance beside the market's |
+| `soccer-fpl-transfers` | FPL transfers over the next four gameweeks from minutes, xG per 90 and fixtures, with the hit cost |
 | `soccer-match-preview` | One-page preview: table and form, club Elo, xG for and against, lineups and the three-way line |
 | `soccer-player-props-research` | Scorer, shots, assists and card prices by sportsbook, the market's probability and the player's record against them |
 | `soccer-season-simulation` | Simulated finishing positions for a league: title, top four, relegation chances |

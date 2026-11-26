@@ -2,7 +2,7 @@
 name: soccer-season-simulation
 description: "Use when the user wants odds for how a soccer league season finishes, in fan or analyst wording: 'who wins the Premier League', 'will Spurs make top 4', 'Champions League spots', 'who goes down', 'can Newcastle still catch Arsenal', 'projected final table', 'title race odds', 'simulate the run-in'. Use this whenever a final position, title, qualification or relegation chance is the subject. Load it for short fragments and follow-ups too, even with no name given, instead of answering from memory or going straight to the raw tools. Runs a Monte Carlo of the remaining fixtures from our club Elo ratings, the current table and a stated draw and home-advantage assumption, and reports finishing-position probabilities with the method. Not for one match (see soccer-match-preview), shot quality (see soccer-xg-breakdown), a club's style (see soccer-team-style-profile) or the plain table."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   author: SportsDataHQ
 ---
 

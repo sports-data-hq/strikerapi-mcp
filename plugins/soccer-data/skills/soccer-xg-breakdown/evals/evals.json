@@ -1,3 +1,73 @@
-{"skill":"soccer-xg-breakdown","tasks":[{"prompt":"xG breakdown of the last Arsenal vs Chelsea match","expect":["get_events with kind shots","non-penalty xG shown","location-only caveat stated"]},{"prompt":"Is Haaland over-performing his xG this season?","expect":["get_shot_map for the player","goals minus xG with shot count","noise caveat"]},{"prompt":"Did City deserve to win yesterday?","expect":["xG race by minute","biggest chances listed","no betting language"]}],
-"triggers":{"should":["xG breakdown Arsenal Chelsea","did City deserve to win","shot map for Saka this season","who created the best chances","is Haaland over-performing his xG","expected goals story of the match","xG race last night","Liverpool shots conceded this season","big chances missed by Spurs","non-penalty xG for Salah"],
-"should_not":["preview Arsenal vs Chelsea","Premier League table","build an xG model from scratch","NHL expected goals for the Sabres","anytime goalscorer odds","FPL captain this week","list La Liga teams","NFL EPA leaders","explain what xG is in general","transfer news"]}}
+{
+  "skill": "soccer-xg-breakdown",
+  "tasks": [
+    {
+      "prompt": "xG breakdown of the last Arsenal vs Chelsea match",
+      "expect": [
+        "get_events with kind shots",
+        "non-penalty xG shown",
+        "location-only caveat stated"
+      ]
+    },
+    {
+      "prompt": "Is Haaland over-performing his xG this season?",
+      "expect": [
+        "get_shot_map for the player",
+        "goals minus xG with shot count",
+        "noise caveat"
+      ]
+    },
+    {
+      "prompt": "Did City deserve to win yesterday?",
+      "expect": [
+        "xG race by minute",
+        "biggest chances listed",
+        "no betting language"
+      ]
+    },
+    {
+      "prompt": "Were Newcastle unlucky or lucky against Arsenal? How much of that is noise?",
+      "expect": [
+        "non-penalty xG and xG per shot",
+        "big chances (xG 0.30+) counted",
+        "rebound sequence flagged",
+        "gap compared with the spread of luck",
+        "no betting language"
+      ]
+    },
+    {
+      "prompt": "Is Haaland's finishing sustainable?",
+      "expect": [
+        "goals minus non-penalty xG with shot count",
+        "z or standard deviation stated",
+        "not enough data wording under 30 shots or one season"
+      ]
+    }
+  ],
+  "triggers": {
+    "should": [
+      "xG breakdown Arsenal Chelsea",
+      "did City deserve to win",
+      "shot map for Saka this season",
+      "who created the best chances",
+      "is Haaland over-performing his xG",
+      "expected goals story of the match",
+      "xG race last night",
+      "Liverpool shots conceded this season",
+      "big chances missed by Spurs",
+      "non-penalty xG for Salah"
+    ],
+    "should_not": [
+      "preview Arsenal vs Chelsea",
+      "Premier League table",
+      "build an xG model from scratch",
+      "NHL expected goals for the Sabres",
+      "anytime goalscorer odds",
+      "FPL captain this week",
+      "list La Liga teams",
+      "NFL EPA leaders",
+      "explain what xG is in general",
+      "transfer news"
+    ]
+  }
+}

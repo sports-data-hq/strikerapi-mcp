@@ -1,0 +1,56 @@
+{
+  "skill": "soccer-fpl-captain",
+  "tasks": [
+    {
+      "prompt": "Who do I captain this week: Haaland, Salah or Palmer?",
+      "expect": [
+        "P60 with n for each",
+        "xP formula doubled",
+        "market vs model goals shown",
+        "safe pick and vice named"
+      ]
+    },
+    {
+      "prompt": "Double gameweek captain options, here are my three attackers",
+      "expect": [
+        "both fixtures summed",
+        "kickoff times for vice cover",
+        "no injury claims without data"
+      ]
+    },
+    {
+      "prompt": "Is there a differential captain this week? Haaland 55% owned, Mbeumo 12% owned, Palmer 30% owned",
+      "expect": [
+        "uses the pasted ownership",
+        "points gap as the price",
+        "xP evidence for each"
+      ]
+    }
+  ],
+  "triggers": {
+    "should": [
+      "who do I captain this week",
+      "Haaland or Salah for the armband",
+      "who is my vice captain",
+      "a captain differential this week",
+      "double gameweek captain pick",
+      "safe captain pick for FPL",
+      "is it worth captaining him away from home",
+      "Triple Captain target",
+      "rank my top three for the armband",
+      "FPL armband help"
+    ],
+    "should_not": [
+      "who should I transfer in for FPL",
+      "should I take a hit",
+      "preview Arsenal vs Chelsea",
+      "Haaland first goalscorer price",
+      "Premier League standings",
+      "explain what xG means",
+      "who wins the Premier League",
+      "fantasy football captain in MLS",
+      "best waiver pickups NFL",
+      "how did Salah play last week"
+    ]
+  }
+}

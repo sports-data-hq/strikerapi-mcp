@@ -2,7 +2,7 @@
 name: soccer-player-props-research
 description: "Use when the user asks about soccer player prop prices as information: 'Haaland anytime scorer odds', 'how often does Saka score when he's priced like this', 'Palmer shots on target line', 'who's most likely to score in Arsenal Chelsea according to the market', 'did the price move on Salah', 'is Isak worth looking at for first goalscorer'. Shows prices by sportsbook, the market's no-margin probability, the player's record against similar lines with minutes, and how the price moved. Covers anytime, first and last goalscorer, shots, shots on target, assists and cards where the league holds them. Never says which side to take. Not for match previews (see soccer-match-preview), expected goals stories (see soccer-xg-breakdown) or general odds math (see odds-market-analysis)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   author: SportsDataHQ
 ---
 

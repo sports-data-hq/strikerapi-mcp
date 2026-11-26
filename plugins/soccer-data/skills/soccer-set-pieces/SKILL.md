@@ -2,7 +2,7 @@
 name: soccer-set-pieces
 description: "Use when the user wants set-piece numbers in soccer: 'how many goals do Arsenal score from corners', 'who takes the set pieces', 'are they good at defending corners', 'penalty record this season', 'free kick goals', 'set piece dependence'. Pulls set-piece events from match event data, counts them and what came from them, and says when the events are not held for a league or season. Not for a match preview (see soccer-match-preview), shot quality by location (see soccer-xg-breakdown) or playing style (see soccer-team-style-profile)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   author: SportsDataHQ
 ---
 

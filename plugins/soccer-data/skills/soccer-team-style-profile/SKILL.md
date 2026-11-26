@@ -2,7 +2,7 @@
 name: soccer-team-style-profile
 description: "Use when the user asks how a soccer club plays, in fan or analyst wording: 'how do Brighton play', 'do they press high', 'do they sit deep', 'who counter-attacks', 'long ball or short passing', 'does this team shoot from distance', 'tactical identity', 'Barca vs Real styles', 'attacking or defensive side'. Use this whenever a club's style, tactics or identity is the subject, even for one club with no opponent. Also use it for bare follow-ups with no name given, and load it instead of answering from memory or going straight to the raw tools. Profiles possession, shot volume and quality, set pieces, discipline and where shots come from, for and against, relative to the league; says plainly that pressing and passing-pattern data are not held. Not for one match's xG story (see soccer-xg-breakdown), match previews (see soccer-match-preview), finishing positions (see soccer-season-simulation) or set pieces alone (see soccer-set-pieces)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   author: SportsDataHQ
 ---
 
