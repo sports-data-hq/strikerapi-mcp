@@ -22,8 +22,9 @@ A one-page preview of one match from live StrikerAPI calls. The default league i
 3. **Strength.** `get_ratings()` (2 cr): our club Elo. A 100-point gap is about a 64% expected score for the stronger side at a neutral venue.
 4. **Underlying numbers.** `get_team_stats(season, team)` (5 cr) for both: goals and our xG for and against per match, shots, possession.
 5. **History (optional).** `get_head_to_head(team, opponent)` (2 cr): weak evidence, say so.
-6. **Lineups (when out, about an hour before kickoff).** `get_lineups(game_id)` (5 cr): formations and starting XIs.
-7. **What the market implies (optional).** `get_game_probabilities(game_id)` (5 cr): no-margin home/draw/away, totals and handicaps across books.
+6. **Who is out.** `get_availability(team, absent_only: true)` (5 cr) for both clubs: players missing from their club's last two or more matchday squads (`absent`) or the latest one, with last appearance. It can't say injury from suspension or selection; say so.
+7. **Lineups (when out, about an hour before kickoff).** `get_lineups(game_id)` (5 cr): formations and starting XIs.
+8. **What the market implies (optional).** `get_game_probabilities(game_id)` (5 cr): no-margin home/draw/away, totals and handicaps across books.
 
 ## Output template
 ```
@@ -32,7 +33,7 @@ Line: home <x> / draw <y> / away <z> | Market (no-margin): <h%> / <d%> / <a%>
 Elo: <home> vs <away> (gap <n>)
 Form: last 5 for both (W/D/L, GF-GA)
 xG per match (season): for / against for both, vs actual goals (over/under-performance)
-Lineups: <formations, notable absences> or "not announced yet"
+Out: <absent players per club from get_availability, with last appearance> | Lineups: <formations> or "not announced yet"
 What to watch: 2-4 bullets tied to the numbers
 Data: get_schedule, get_standings, get_ratings, get_team_stats | <league>, season <yyyy>
 ```

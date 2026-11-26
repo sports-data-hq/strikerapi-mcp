@@ -14,7 +14,7 @@ An FPL transfer is worth making when the points gained over the next few gamewee
 - For anything across games, seasons or players, apply the sports-data-preflight checks first (ids from search, the season convention, one league, enough data).
 - Tools come from the StrikerAPI MCP server. `season` is the year the season starts (2025 = 2025-26). The default league is the Premier League; pass `league` for others. Player ids come from `search_players(name)` (1 cr).
 - Ask the user to paste: their 15 players (positions, teams, selling prices if known), money in the bank, free transfers, and the prices of any targets. Prices, ownership and chip status are not in the data; never state a price from memory.
-- There is no injury tool for soccer. Fitness and suspension news come from the user; say a player's minutes risk is unconfirmed unless the log shows him playing.
+- Availability: `get_availability(team)` (5 cr a club, 10 the whole league; `absent_only: true` for just the missing) for the clubs involved; never bring in a player marked `absent`, and treat `missed_last_squad` as a minutes risk. There is no injury report, so news not yet visible in the squads comes from the user; say a player's minutes risk is unconfirmed unless the log shows him playing.
 - Gameweek deadlines and double or blank gameweeks are mapped from fixture dates; ask the user for the deadline date if it matters.
 
 ## Default path (about 40 to 100 credits)
@@ -44,7 +44,7 @@ Squad xP (sorted): <player (team): xP, P60 (n), fixtures <opp list>, flag>
 Candidates: <player: xP, P60 (n), E[g], E[a], price (yours), fixtures>
 Best moves: <out> -> <in>: gain <x> over <n> fixtures, hit <0/4>, net <y>
 Fixture run: <team: games, avg opp goals conceded>
-Unchecked: <injuries, prices, ownership>
+Availability: <status from get_availability> | Unchecked: <prices, ownership, news not yet in squads>
 Data: get_schedule, get_team_stats, get_player, get_player_games, get_leaders, get_player_props | season <yyyy>
 ```
 

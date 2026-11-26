@@ -14,7 +14,7 @@ A captain doubles one player's points, so the choice rewards minutes security pl
 - For anything across games, seasons or players, apply the sports-data-preflight checks first (ids from search, the season convention, one league, enough data).
 - Tools come from the StrikerAPI MCP server. `season` is the year the season starts (2025 = 2025-26). The default league is the Premier League; pass `league` for others. Player ids come from `search_players(name)` (1 cr).
 - Ask for the shortlist (or the whole squad). Ownership percentages are not in the data; without them, give the ranking only and say the differential call needs ownership.
-- Injury and suspension news is not in the data (no soccer injury tool); ask the user for flags, and check minutes in the recent log.
+- Availability: `get_availability(team)` (5 cr a club, 10 the whole league; `absent_only: true` for just the missing) for each shortlisted player's club. `absent` means missing from the club's last two or more matchday squads (injured, suspended, ill or dropped; the tool can't say which), `missed_last_squad` means the latest one. Drop an absent player from the ranking and say why; flag a missed-last-squad player as a minutes risk. There is no injury report, so still ask the user for news the squads can't show yet.
 - Anytime-scorer, shots, shots on target and assist prices exist for the Premier League, La Liga, Serie A, Bundesliga, Ligue 1, MLS and the Champions League; check with `estimate_only` before spending credits.
 
 ## Default path (about 30 to 70 credits for a shortlist of 3 to 5)
@@ -45,7 +45,7 @@ Gameweek <n> captain ranking (<season>)
 2. ...
 Safe pick: <name> (why) | Ceiling pick: <name> | Vice: <name> (kicks off <date>)
 Differential: <name: ownership <pasted>> / needs ownership
-Unchecked: <injuries, rotation news>
+Availability: <each player's status and recent_squads from get_availability> | Unchecked: <injury news not yet visible in squads>
 Data: get_schedule, get_player_games, get_player, get_team_stats, get_player_props | season <yyyy>
 ```
 
