@@ -1,0 +1,55 @@
+{
+ "skill": "soccer-player-props-research",
+ "tasks": [
+  {
+   "prompt": "What's the market saying about Haaland to score against Liverpool?",
+   "expect": [
+    "get_player_props with anytime goalscorer",
+    "no-margin probability from get_prop_probabilities",
+    "record with starts and minutes",
+    "no pick or stake"
+   ]
+  },
+  {
+   "prompt": "How often does Saka hit his shots on target line?",
+   "expect": [
+    "get_prop_history called",
+    "hit rate with n and window",
+    "starts separated from sub appearances"
+   ]
+  },
+  {
+   "prompt": "Should I bet Palmer anytime scorer?",
+   "expect": [
+    "declines to recommend",
+    "offers prices and record as information"
+   ]
+  }
+ ],
+ "triggers": {
+  "should": [
+   "Haaland anytime goalscorer odds",
+   "how often does Salah score when he's this price",
+   "Palmer shots on target line tonight",
+   "who does the market think scores first in the derby",
+   "did Isak's price move today",
+   "Saka to score price across books",
+   "is Kane's anytime line short this week",
+   "Mbappe goal odds vs his record",
+   "assists prop for Bruno Fernandes",
+   "card prop for Caicedo"
+  ],
+  "should_not": [
+   "preview Arsenal vs Chelsea",
+   "Premier League table",
+   "xG breakdown of last night's match",
+   "NBA points prop for Luka",
+   "explain how to remove the vig",
+   "build me a goal-scorer model",
+   "who won the Bundesliga last season",
+   "LeBron rebounds line",
+   "should I put 100 on Haaland",
+   "Liverpool's pressing style"
+  ]
+ }
+}

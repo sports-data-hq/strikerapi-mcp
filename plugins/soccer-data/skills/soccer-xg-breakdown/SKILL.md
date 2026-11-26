@@ -1,6 +1,6 @@
 ---
 name: soccer-xg-breakdown
-description: "Use when the user wants the expected-goals story of a soccer match, club or player: 'xG breakdown of Arsenal Chelsea', 'did City deserve to win', 'who created the best chances', 'Liverpool shots conceded this season', 'shot map for Saka', 'is Haaland over-performing his xG'. Shows shots with location, outcome and our xG, the xG race, big chances, and finishing over or under expected with sample size. Not for pre-match previews (see soccer-match-preview)."
+description: "Use when the user asks whether a soccer result, club or player matches the chances created, in fan or analyst wording: 'were Spurs unlucky', 'did they deserve the win', 'who had the better chances', 'xG race for the derby', 'is Salah overperforming', 'big chances missed', 'shots against Liverpool', 'xG story of last night'. Use this whenever results are compared with shot quality. Load it for short fragments and follow-ups too, even with no name given, instead of answering from memory or going straight to the raw tools. Shows shots with location, outcome and our xG, big chances, and finishing over or under expected with sample size. Not for pre-match previews (see soccer-match-preview), a club's style (see soccer-team-style-profile), title odds (see soccer-season-simulation), hockey expected goals (see nhl-xg-report) or building an xG model."
 metadata:
   version: 2.0.0
   author: SportsDataHQ
