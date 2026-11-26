@@ -43,7 +43,7 @@ It forwards to the hosted server with your key, so every tool and credit cost is
 
 ## Skills
 
-8 Claude skills for soccer ship in this repo, plus 15 analytics skills for models, backtests, calibration and comparing a model with the market. Every number in an answer comes from a live StrikerAPI tool call, and odds are information only: no stakes, no picks.
+8 Claude skills for soccer ship in this repo, plus 13 analytics skills for models, backtests, calibration and comparing a model with the market. Every number in an answer comes from a live StrikerAPI tool call, and odds are information only: no stakes, no picks.
 
 Claude Code:
 
@@ -66,7 +66,7 @@ Codex: `codex plugin marketplace add sports-data-hq/strikerapi-mcp`. Any agent t
 | `soccer-team-style-profile` | How a club plays: shot locations, xG, possession proxies and style against the league |
 | `soccer-xg-breakdown` | A match or season in xG: shot maps, the xG race, big chances, finishing against expected |
 
-The analytics skills: `backtesting`, `data-pipeline`, `elo-engineering`, `feature-engineering`, `market-vs-model`, `model-building`, `nl-to-query`, `odds-market-analysis`, `prediction-tracker`, `probability-calibration`, `season-pack-offline`, `sports-data-preflight`, `sports-skill-router`, `visualization`, `walk-forward-validation`.
+The analytics skills: `backtesting`, `data-pipeline`, `elo-engineering`, `feature-engineering`, `market-vs-model`, `model-building`, `odds-market-analysis`, `prediction-tracker`, `probability-calibration`, `season-pack-offline`, `sports-data-preflight`, `visualization`, `walk-forward-validation`.
 
 Real answers on live data, with the credits each used: [example answers](https://github.com/sports-data-hq/sportsdatahq-skills/tree/main/docs/examples/soccer).
 
