@@ -50,7 +50,7 @@ Codex: `codex plugin marketplace add sports-data-hq/strikerapi-mcp`. Any agent t
 | Skill | What it does |
 |---|---|
 | `soccer-match-preview` | One-page preview: table and form, club Elo, xG for and against, lineups and the three-way line |
-| `soccer-player-props-research` | Soccer player prop prices as information |
+| `soccer-player-props-research` | Scorer, shots, assists and card prices by sportsbook, the market's probability and the player's record against them |
 | `soccer-season-simulation` | Simulated finishing positions for a league: title, top four, relegation chances |
 | `soccer-set-pieces` | Set pieces from event data: corners and free kicks, and what came from them |
 | `soccer-team-style-profile` | How a club plays: shot locations, xG, possession proxies and style against the league |
