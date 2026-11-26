@@ -37,9 +37,19 @@ What to watch: 2-4 bullets tied to the numbers
 Data: get_schedule, get_standings, get_ratings, get_team_stats | <league>, season <yyyy>
 ```
 
+## When there's no game
+
+If the game the user names isn't scheduled (off-season, not booked, already played), don't stop to ask. Do the most useful real version and say which one in the first line:
+1. The next scheduled meeting of those two sides, if `get_schedule` (filtered by team) has one.
+2. Otherwise their most recent meeting and where each side finished last season, from the last completed season's data.
+3. For a matchup that can't happen soon, the ratings matchup labelled as hypothetical.
+Answer first; offer the alternative in one closing line, never as a question before answering.
+
 ## Rules
 - Our xG is a location model (distance, angle, header or not); it does not see defenders. Say "our xG" and keep it.
 - Show matches played behind per-match rates; under 8 matches is noisy.
 - Three outcomes: never talk about a two-way "win probability" without the draw.
 - Odds are information about the market: no side, stake or bet.
+- Complete before writing: every step in the default path is called for both sides before the preview is written. If a call fails or returns nothing, say which section is missing rather than writing around it.
+- Sequences (last 5, recent form, a run of results) are quoted in the order the tool returns them, with dates; never retell them from memory. Lists in the answer must match the tool rows.
 - Out of credits: if a call is refused for credits, pass on the API's message as it comes (it says when free credits refill and how to add more), and stop; don't retry or switch tools to get around it.
