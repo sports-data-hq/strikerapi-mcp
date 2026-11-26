@@ -23,7 +23,7 @@ Claude: [calls get_player_props]
 Most clients connect to `https://mcp.strikerapi.com/mcp` directly. For a client that launches a local process instead:
 
 ```bash
-git clone https://github.com/noahowsh/strikerapi-mcp.git && cd strikerapi-mcp && npm install
+git clone https://github.com/sports-data-hq/strikerapi-mcp.git && cd strikerapi-mcp && npm install
 STRIKERAPI_API_KEY=your_key node index.js
 ```
 
@@ -130,13 +130,13 @@ See [`examples/README.md`](examples/README.md) for details. Get a free key (500 
 
 ## Starter projects
 
-- [soccer-xg-model](https://github.com/noahowsh/soccer-xg-model): fit your own expected-goals model from shot locations and grade it against StrikerAPI's xG, in one Python script.
+- [soccer-xg-model](https://github.com/sports-data-hq/soccer-xg-model): fit your own expected-goals model from shot locations and grade it against StrikerAPI's xG, in one Python script.
 
 ## Use it in
 
 - **Claude, ChatGPT, Cursor, VS Code, Gemini CLI, Grok, Perplexity, Le Chat:** add `https://mcp.strikerapi.com/mcp` as a remote MCP server. Step-by-step for each: https://strikerapi.com/mcp?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp
-- **Gemini CLI:** `gemini extensions install https://github.com/noahowsh/strikerapi-mcp`
-- **Cursor:** the [SportsDataHQ plugins for Cursor](https://github.com/noahowsh/sportsdatahq-cursor-plugins)
+- **Gemini CLI:** `gemini extensions install https://github.com/sports-data-hq/strikerapi-mcp`
+- **Cursor:** the [SportsDataHQ plugins for Cursor](https://github.com/sports-data-hq/sportsdatahq-cursor-plugins)
 - **Google Sheets:** `=SDHQ("strikerapi","list_teams")` fills a live table: https://sportsdatahq.com/sheets?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp
 - **REST:** `POST https://mcp.strikerapi.com/v1/<tool>` with an `x-api-key` header: https://strikerapi.com/docs?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp
 
@@ -193,7 +193,7 @@ Coverage by season, read live from the database: https://strikerapi.com/docs?utm
 
 ## Pricing
 
-500 free credits every month, no card. Plans: Starter $19/mo (10,000 credits), Pro $49/mo (30,000), Scale $149/mo (125,000). Wallet top-ups from $5, never expire. https://strikerapi.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp
+500 free credits every month, no card. Plans: Starter $19/mo (10,000 credits), Pro $49/mo (30,000), Scale $149/mo (125,000), Business $299/mo (300,000). Wallet top-ups from $5, never expire. https://strikerapi.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp
 
 ## Attribution
 
@@ -217,7 +217,7 @@ Install `soccer-data`, which bundles the soccer skills and the StrikerAPI MCP se
 
 ```bash
 export STRIKERAPI_API_KEY=your_key
-gemini extensions install https://github.com/noahowsh/strikerapi-mcp
+gemini extensions install https://github.com/sports-data-hq/strikerapi-mcp
 ```
 
 The extension adds the StrikerAPI MCP server (https://mcp.strikerapi.com/mcp) and sends the key in the `x-api-key` header. Get a free key (500 credits a month) at https://strikerapi.com/signup?utm_source=github&utm_medium=readme&utm_campaign=strikerapi-mcp.
