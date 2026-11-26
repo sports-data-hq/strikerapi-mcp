@@ -39,3 +39,4 @@ Data: list_games, get_game, get_events | <league>, season <yyyy>
 - Always say "our xG" and the location-only caveat once.
 - Separate penalties; report shot counts beside xG; flag tiny samples (under 30 shots for a player).
 - No betting language.
+- Out of credits: if a call is refused for credits, pass on the API's message as it comes (it says when free credits refill and how to add more), and stop; don't retry or switch tools to get around it.
