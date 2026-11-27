@@ -12,7 +12,7 @@ Expected goals tells you who made the better chances, not who won. This skill tu
 
 ## Before you start
 - For anything across games, seasons or players, apply the sports-data-preflight checks first (ids from search, the season convention, one league, enough data).
-- Tools come from the StrikerAPI MCP server. Our xG is a location model: the league's goal rate for shots from the same distance and angle, header or not; penalties at the league's conversion rate. It does not see defenders, the pass or the keeper. Say so once.
+- Tools come from the StrikerAPI MCP server. Our xG is a location model: the league's goal rate for shots from the same distance and angle, header or not; penalties at the league's conversion rate. It does not see defenders, the pass or the keeper. Say so once. It is fitted on every season; for a backtest or a model feature, use `xg_point_in_time` (fitted only on earlier seasons, null in a league's first located seasons) and say which one you used.
 - Seasons are named by the year they start (2026 = 2026-27). MLS, NWSL, Liga MX, Brazil and Argentina are calendar years. Every tool takes `league` (soccer = Premier League by default; mls, laliga, seriea, bundesliga, ligue1, ucl, championship and others).
 - Located shots exist from 2012-13 in the big leagues (partial that season for some); older matches carry goals, cards and substitutions only. Check coverage before a long history.
 - Pitch frame: x is distance from the goal line as a share of half the pitch (penalty spot about 0.23), y across (0.5 = centre). Shots also carry `zone`, `body_part`, `penalty` and `distance_m`.
