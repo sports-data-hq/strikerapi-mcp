@@ -4,7 +4,7 @@ The last completed season of soccer as CSV, free to use under the [StrikerAPI Sa
 
 **Download:** the latest `strikerapi-season-pack.zip` from this repository's [season-pack release](https://github.com/sports-data-hq/strikerapi-mcp/releases/tag/season-pack). `preview/` holds the first 100 rows of a few files.
 
-Seasons: 2025. Season naming: a season that spans two years carries its first year, so 2025 is 2025-26; MLS, NWSL, Liga MX, Brazil and Argentina use the calendar year. Competitions, by their API id: argentina, brazil, bundesliga, championship, eredivisie, laliga, ligamx, ligue1, mls, nwsl, primeira, scotland, seriea, soccer, ucl, uecl, uel (soccer is the Premier League). No odds, props or play-by-play: those, every earlier season and live data are on the API, free to start at https://strikerapi.com/signup?utm_source=github&utm_medium=pack&utm_campaign=strikerapi-pack.
+Seasons: 2025, 2026. Season naming: a season that spans two years carries its first year, so 2025 is 2025-26; MLS, NWSL, Liga MX, Brazil and Argentina use the calendar year. Competitions, by their API id: argentina, brazil, bundesliga, championship, eredivisie, laliga, ligamx, ligue1, mls, nwsl, primeira, scotland, seriea, soccer, ucl, uecl, uel (soccer is the Premier League). No odds, props or play-by-play: those, every earlier season and live data are on the API, free to start at https://strikerapi.com/signup?utm_source=github&utm_medium=pack&utm_campaign=strikerapi-pack.
 
 ## Files
 
@@ -50,6 +50,10 @@ Seasons: 2025. Season naming: a season that spans two years carries its first ye
 | `strikerapi-nwsl-2025-players.csv` | 369 |
 | `strikerapi-nwsl-2025-standings.csv` | 14 |
 | `strikerapi-nwsl-2025-teams.csv` | 14 |
+| `strikerapi-nwsl-2026-games.csv` | 247 |
+| `strikerapi-nwsl-2026-players.csv` | 421 |
+| `strikerapi-nwsl-2026-standings.csv` | 16 |
+| `strikerapi-nwsl-2026-teams.csv` | 16 |
 | `strikerapi-primeira-2025-games.csv` | 306 |
 | `strikerapi-primeira-2025-players.csv` | 579 |
 | `strikerapi-primeira-2025-standings.csv` | 18 |
