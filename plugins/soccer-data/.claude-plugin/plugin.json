@@ -1,7 +1,7 @@
 {
   "name": "soccer-data",
   "displayName": "StrikerAPI: soccer skills",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Soccer analysis skills on StrikerAPI: game previews, player and team research, and the community's standard metrics, with every number pulled live from the StrikerAPI MCP server.",
   "author": {
     "name": "SportsDataHQ",
@@ -19,5 +19,7 @@
     "mls",
     "sports-data",
     "strikerapi"
-  ]
+  ],
+  "privacyPolicyUrl": "https://strikerapi.com/privacy",
+  "icon": ".claude-plugin/icon.png"
 }
